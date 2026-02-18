@@ -243,7 +243,7 @@ colorlinks,
 % of the \href{https://www.gov.uk/government/publications/govuk-brand-guidelines}{United Kingdom government}.
 % We will name the file |orgstyle-ukgov.sty|. It can be used by running the
 % macro |\orgstyle{ukgov}| in your \LaTeX{} file. An example of this style can be
-% found in \autoref{fig:ukgovexample}.\par
+% found in \autoref{fig:ukgovexample}.
 % \begin{figure}
 %   \centering
 %   \includegraphics[width=0.6\textwidth]{ukgovtest.pdf}
@@ -252,6 +252,26 @@ colorlinks,
 %   \autoref{sec:orgstyleexample}. \hologo{pdfLaTeX} was used for compilation
 %   (and hence the actual font is \texttt{phv}).}\label{fig:ukgovexample}
 % \end{figure}
+% % \setcounter{CodelineNo}{0}
+%    \begin{macrocode}
+\definecolor{UKPrimaryBlue}{RGB}{029,112,184}
+\definecolor{UKAccentTeal}{RGB}{000,255,224}
+\definecolor{UKPrimaryGreen}{RGB}{017,125,090}
+\definecolor{UKPrimaryRed}{RGB}{202,053,053}
+\definecolor{UKPrimaryYellow}{RGB}{255,221,000}
+\def\orgstyle@tfsansfont{GDS Transport}
+\def\orgstyle@pdffont{\renewcommand\sfdefault{phv}}
+\renewcommand{\familydefault}{\sfdefault}
+\@ifclassloaded{beamer}{%
+    \mode<presentation>
+    \setbeamercolor{structure}{fg=UKPrimaryBlue}
+    \setbeamercolor{alerted text}{fg=UKPrimaryRed}
+    \setbeamercolor{example text}{fg=UKPrimaryGreen}
+    \mode
+    <all>
+}{}
+%    \end{macrocode}\par
+% We will now go through this code line by line.\par
 % First, we should define all relevant colours for the house style.
 % Give them a recognisable name, so they can easily be used by the
 % end user. Make sure not to use actual names of colours,
