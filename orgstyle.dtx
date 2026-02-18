@@ -178,6 +178,7 @@ hyperindex=false,
 colorlinks,
 ]{hyperref}
 \usepackage{hologo}
+\usepackage{graphicx}
 \EnableCrossrefs
 \CodelineIndex
 \RecordChanges
@@ -234,7 +235,91 @@ colorlinks,
 % \textsf{orgstyle} also automatically implements the organisation's
 % colours into the presentation. The colours change best with the
 % \textsf{whale} colortheme or similar.
-%
+%^^A
+% \subsection{Example of an \textsf{orgstyle} file}\label{sec:orgstyleexample}
+% Below is an example of a file that can be used with \textsf{orgstyle}.
+% All \textsf{orgstyle} files should follow the naming scheme of
+% |orgstyle-NAME.sty|. As an example, we will implement the brand guide
+% of the \href{https://www.gov.uk/government/publications/govuk-brand-guidelines}{United Kingdom government}.
+% We will name the file |orgstyle-ukgov.sty|. It can be used by running the
+% macro |\orgstyle{ukgov}| in your \LaTeX{} file. An example of this style can be
+% found in \autoref{fig:ukgovexample}.\par
+% \begin{figure}
+%   \centering
+%   \includegraphics[width=0.6\textwidth]{ukgovtest.pdf}
+%   \caption{An example of a \textsf{beamer} slide using the \textsf{Frankfurt}
+%   beamer theme, \textsf{orgstyle} and the \texttt{ukgov} style as outlined in 
+%   \autoref{sec:orgstyleexample}. Helvetica (or, rather, \texttt{phv}) is substituted for GDS Transport,
+%   since the package author isn't affiliated to the UK government, and thus
+%   has no access to GDS Transport.}\label{fig:ukgovexample}
+% \end{figure}
+% First, we should define all relevant colours for the house style.
+% Give them a recognisable name, so they can easily be used by the
+% end user. Make sure not to use actual names of colours,
+% like ``blue'' or ``maroon'', since they may interfere with
+% those defined by \LaTeX{} itself. Note that not all colours may be
+% actually used by \textsf{orgstyle}; defining them here is nonetheless
+% useful for users.
+% \setcounter{CodelineNo}{0}
+%    \begin{macrocode}
+\definecolor{UKPrimaryBlue}{RGB}{029,112,184}
+\definecolor{UKAccentTeal}{RGB}{000,255,224}
+\definecolor{UKPrimaryGreen}{RGB}{017,125,090}
+\definecolor{UKPrimaryRed}{RGB}{202,053,053}
+\definecolor{UKPrimaryYellow}{RGB}{255,221,000}
+%    \end{macrocode}
+% Now, we define the fonts. The UK government only specifies a sans
+% serif font, GDS Transport. We save the font to a variable
+% \DescribeMacro{\orgstyle@tfsansfont} |\orgstyle@tfsansfont|.
+%    \begin{macrocode}
+\def\orgstyle@tfsansfont{GDS Transport}
+%    \end{macrocode}
+% A serif/Roman font can be defined in the same way using
+% \DescribeMacro{\orgstyle@tfmainfont} |\orgstyle@tfmainfont|,
+% and a typewriter font can be defined using
+% \DescribeMacro{\orgstyle@tfmonofont} |\orgstyle@tfmonofont|.\par
+% If a user doesn't have the correct font installed, \textsf{orgstyle}
+% will throw a warning. For \hologo{pdfLaTeX} users, just selecting
+% a font won't work, since \hologo{pdfLaTeX} doesn't support ordinary
+% font formats such as |otf| and |ttf|. Therefore, we will have to
+% use a \hologo{pdfLaTeX}-compatible font, instead. We save the code used
+% to load all fonts into a single variable.
+%    \begin{macrocode}
+\def\orgstyle@pdffont{\renewcommand\sfdefault{phv}}
+%    \end{macrocode}
+% Of course, \hologo{pdfLaTeX} doesn't support GDS Transport, at all.
+% As an alternative, the UK government mentions using Neue Helvetica.
+% Although \hologo{pdfLaTeX} doesn't support this, either, it does
+% support Helvetica, under the name |phv|.\par
+% If we were to use a font for which we need
+% an external package, we should instead use |\usepackage{roboto}| to
+% load the fonts. If we also want to load a serif or typewriter font,
+% we should put them all in the single variable.\par
+% Since the UK government brand guide specifies only a sans serif font
+% should be used, we should also tell \LaTeX{} to use it instead of the
+% main serif font.
+%    \begin{macrocode}
+\renewcommand{\familydefault}{\sfdefault}
+%    \end{macrocode}
+% Finally, we define the behaviour of our style in Beamer. Theoretically,
+% one may put any Beamer style commands in here, but we recommend to only
+% change some colours around. The most important colour to change is
+% the |structure| colour, which will, depending on you \textsf{beamer}
+% theme, determine almost all colours on your presentation. Set this
+% to whatever colour is considered primary by your organisation. If your
+% organisation has an official reddish colour and greenish colour, feel
+% free to also change the colours of |alerted| and |example| text, which
+% usually also changes the corresponding boxes.
+%    \begin{macrocode}
+\@ifclassloaded{beamer}{%
+    \mode<presentation>
+    \setbeamercolor{structure}{fg=UKPrimaryBlue}
+    \setbeamercolor{alerted text}{fg=UKPrimaryRed}
+    \setbeamercolor{example text}{fg=UKPrimaryGreen}
+    \mode
+    <all>
+}{}
+%    \end{macrocode}
 %
 %
 %
@@ -248,6 +333,7 @@ colorlinks,
 %^^A
 %^^A
 %^^A
+% \setcounter{CodelineNo}{0}
 %    \begin{macrocode}
 %<*orgstyle>
 \RequirePackage{iftex}
@@ -339,8 +425,8 @@ colorlinks,
         {
             \PackageWarning{orgstyle}{Font #1 not found. 
             Your organisation recommends its usage. 
-            Please install it from the internet or your
-            LaTeX distribution.}
+            Please install it from the internet, you organisation
+            or your LaTeX distribution.}
         }
 }
 %    \end{macrocode}

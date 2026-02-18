@@ -21,3 +21,6 @@
 *.ind
 *.nav
 *.snm
+
+## Images
+!ukgovtest.pdf
