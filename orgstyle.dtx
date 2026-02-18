@@ -172,6 +172,7 @@ If you're using MiKTeX, open MiKTeX console, go to
 %<*driver>
 \NeedsTeXFormat{LaTeX2e}[2020/10/01]
 \documentclass{ltxdoc}
+\usepackage{\jobname}
 \usepackage[english]{babel}
 \usepackage[final,
 hyperindex=false,
@@ -250,47 +251,35 @@ colorlinks,
 %   \autoref{sec:orgstyleexample}. \hologo{pdfLaTeX} was used for compilation
 %   (and hence the actual font is \texttt{phv}).}\label{fig:ukgovexample}
 % \end{figure}
-% % \setcounter{CodelineNo}{0}
-%    \begin{macrocode}
-\definecolor{UKPrimaryBlue}{RGB}{029,112,184}
-\definecolor{UKAccentTeal}{RGB}{000,255,224}
-\definecolor{UKPrimaryGreen}{RGB}{017,125,090}
-\definecolor{UKPrimaryRed}{RGB}{202,053,053}
-\definecolor{UKPrimaryYellow}{RGB}{255,221,000}
-\def\orgstyle@tfsansfont{GDS Transport}
-\def\orgstyle@pdffont{\renewcommand\sfdefault{phv}}
-\renewcommand{\familydefault}{\sfdefault}
-\@ifclassloaded{beamer}{%
-    \mode<presentation>
-    \setbeamercolor{structure}{fg=UKPrimaryBlue}
-    \setbeamercolor{alerted text}{fg=UKPrimaryRed}
-    \setbeamercolor{example text}{fg=UKPrimaryGreen}
-    \mode
-    <all>
-}{}
-%    \end{macrocode}\par
+% \begin{verbatim}
+% 1. \definecolor{UKPrimaryBlue}{RGB}{029,112,184}
+% 2. \definecolor{UKAccentTeal}{RGB}{000,255,224}
+% 3. \definecolor{UKPrimaryGreen}{RGB}{017,125,090}
+% 4. \definecolor{UKPrimaryRed}{RGB}{202,053,053}
+% 5. \definecolor{UKPrimaryYellow}{RGB}{255,221,000}
+% 6. \def\orgstyle@tfsansfont{GDS Transport}
+% 7. \def\orgstyle@pdffont{\renewcommand\sfdefault{phv}}
+% 8. \renewcommand{\familydefault}{\sfdefault}
+% 9. \@ifclassloaded{beamer}{%
+%10.     \mode<presentation>
+%11.     \setbeamercolor{structure}{fg=UKPrimaryBlue}
+%12.     \setbeamercolor{alerted text}{fg=UKPrimaryRed}
+%13.     \setbeamercolor{example text}{fg=UKPrimaryGreen}
+%13.     \mode
+%14.     <all>
+%14. }{}
+% \end{verbatim}
 % We will now go through this code line by line.\par
-% First, we should define all relevant colours for the house style.
+% In lines \(1--5\), we define all relevant colours for the house style.
 % Give them a recognisable name, so they can easily be used by the
 % end user. Make sure not to use actual names of colours,
 % like ``blue'' or ``maroon'', since they may interfere with
 % those defined by \LaTeX{} itself. Note that not all colours may be
 % actually used by \textsf{orgstyle}; defining them here is nonetheless
-% useful for users.
-% \setcounter{CodelineNo}{0}
-%    \begin{macrocode}
-\definecolor{UKPrimaryBlue}{RGB}{029,112,184}
-\definecolor{UKAccentTeal}{RGB}{000,255,224}
-\definecolor{UKPrimaryGreen}{RGB}{017,125,090}
-\definecolor{UKPrimaryRed}{RGB}{202,053,053}
-\definecolor{UKPrimaryYellow}{RGB}{255,221,000}
-%    \end{macrocode}
-% Now, we define the fonts. The UK government only specifies a sans
-% serif font, GDS Transport. We save the font to a variable
+% useful for users.\par
+% We define the fonts in lines \(6--8\). The UK government only specifies a sans
+% serif font, GDS Transport. We save the font to a variable using
 % \DescribeMacro{\orgstyle@tfsansfont} |\orgstyle@tfsansfont|.
-%    \begin{macrocode}
-\def\orgstyle@tfsansfont{GDS Transport}
-%    \end{macrocode}
 % A serif/Roman font can be defined in the same way using
 % \DescribeMacro{\orgstyle@tfmainfont} |\orgstyle@tfmainfont|,
 % and a typewriter font can be defined using
@@ -300,25 +289,20 @@ colorlinks,
 % a font won't work, since \hologo{pdfLaTeX} doesn't support ordinary
 % font formats such as |otf| and |ttf|. Therefore, we will have to
 % use a \hologo{pdfLaTeX}-compatible font, instead. We save the code used
-% to load all fonts into a single variable.
-%    \begin{macrocode}
-\def\orgstyle@pdffont{\renewcommand\sfdefault{phv}}
-%    \end{macrocode}
+% to load all fonts into a single variable, \DescribeMacro{\orgstyle@pdffont}
+% |\orgstyle@pdffont| in line \(7\).\par
 % Of course, \hologo{pdfLaTeX} doesn't support GDS Transport, at all.
 % As an alternative, the UK government mentions using Neue Helvetica.
 % Although \hologo{pdfLaTeX} doesn't support this, either, it does
 % support Helvetica, under the name |phv|.\par
 % If we were to use a font for which we need
-% an external package, we should instead use |\usepackage{roboto}| to
+% an external package, we should instead use |\usepackage{PACKAGE}| to
 % load the fonts. If we also want to load a serif or typewriter font,
 % we should put them all in the single variable.\par
 % Since the UK government brand guide specifies only a sans serif font
 % should be used, we should also tell \LaTeX{} to use it instead of the
-% main serif font.
-%    \begin{macrocode}
-\renewcommand{\familydefault}{\sfdefault}
-%    \end{macrocode}
-% Finally, we define the behaviour of our style in Beamer. Theoretically,
+% main serif font, in line \(8\).\par
+% Finally, in lines \(9--16\), we define the behaviour of our style in Beamer. Theoretically,
 % one may put any Beamer style commands in here, but we recommend to only
 % change some colours around. The most important colour to change is
 % the |structure| colour, which will, depending on you \textsf{beamer}
@@ -327,16 +311,6 @@ colorlinks,
 % organisation has an official reddish colour and greenish colour, feel
 % free to also change the colours of |alerted| and |example| text, which
 % usually also changes the corresponding boxes.
-%    \begin{macrocode}
-\@ifclassloaded{beamer}{%
-    \mode<presentation>
-    \setbeamercolor{structure}{fg=UKPrimaryBlue}
-    \setbeamercolor{alerted text}{fg=UKPrimaryRed}
-    \setbeamercolor{example text}{fg=UKPrimaryGreen}
-    \mode
-    <all>
-}{}
-%    \end{macrocode}
 %
 %
 %
@@ -353,6 +327,7 @@ colorlinks,
 % \setcounter{CodelineNo}{0}
 %    \begin{macrocode}
 %<*orgstyle>
+\ProvidesPackage{orgstyle}[2025/02/18 v1.0 Organisation style implementation]
 \RequirePackage{iftex}
 \RequirePackage{xcolor}
 %    \end{macrocode}
