@@ -10,6 +10,7 @@ jobs:
         uses: xu-cheng/texlive-action@v3
         with:
           run: |
+            mkdir orgstyles
             pdflatex orgstyle.dtx
             makeindex -s gind.ist -o orgstyle.ind orgstyle.idx
             makeindex -s gglo.ist -o orgstyle.gls orgstyle.glo
