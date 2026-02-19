@@ -130,6 +130,7 @@ If you're using MiKTeX, open MiKTeX console, go to
 \usedir{tex/latex/orgstyle}
 \generate{
     \file{orgstyle.sty}{\from{\jobname.dtx}{orgstyle}}
+    \file{orgstyles/orgstyle-uu-nl.sty}{\from{\jobname.dtx}{uu-nl}}
     \file{orgstyles/orgstyle-vuamst.sty}{\from{\jobname.dtx}{vuamst}}
 }
 
@@ -254,6 +255,10 @@ colorlinks,
 % Furthermore, the font that is the default is boldened.\\
 % \begin{tabularx}{\textwidth}{| m{0.15\textwidth} | m{0.15\textwidth} | m{0.2\textwidth} | X |}\hline
 % \textsf{orgstyle} & Organisation & Fonts & Colour scheme\\\hline
+% \textsf{uu-nl} & Utrecht University & \textbf{Merriweather}\newline\textsf{Open Sans} &
+% \ColorName{UUyellow}{255,205,000}\newline
+% \ColorName{UUred}{192,010,053}\\\hline
+% ^^A
 % \textsf{vuamst} & Vrije Universiteit Amsterdam & \textbf{\textsf{Roboto}} &
 % \ColorName{VUblue_primary}{000,119,179}\newline
 % \ColorName{VUblue_secondary}{093,173,208}\newline
@@ -465,6 +470,26 @@ colorlinks,
 % Wherever possible, we only use freely available
 % fonts, in order to respect users (usually students)
 % who don't have access to those fonts.
+% 
+% \subsection{\textsf{uu-nl}: Utrecht University}
+% \href{https://www.uu.nl/en/organisation/corporate-identity/brand-policy}{Source.}\par
+%    \begin{macrocode}
+%<*uu-nl>
+\definecolor{UUyellow}{RGB}{255,205,000}
+\definecolor{UUred}{RGB}{192,010,053}
+
+\def\orgstyle@pdffont{\usepackage{merriweather}\usepackage[defaultsans]{opensans}}
+\def\orgstyle@tfmainfont{Merriweather}
+\def\orgstyle@tfsansfont{Open Sans}
+\@ifclassloaded{beamer}{%
+    \mode<presentation>
+    \setbeamercolor{structure}{fg=UUyellow}
+    \setbeamercolor{alerted text}{fg=UUred}
+    \mode
+    <all>
+}{}
+%</uu-nl>
+%    \end{macrocode}
 % 
 % \subsection{\textsf{vuamst}: Vrije Universiteit Amsterdam}
 % \href{https://vu.nl/en/about-vu/more-about/corporate-identity}{Source.}\par
