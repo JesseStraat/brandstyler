@@ -130,6 +130,7 @@ If you're using MiKTeX, open MiKTeX console, go to
 \usedir{tex/latex/orgstyle}
 \generate{
     \file{orgstyle.sty}{\from{\jobname.dtx}{orgstyle}}
+    \file{orgstyles/orgstyle-vuamst.sty}{\from{\jobname.dtx}{vuamst}}
 }
 
 \obeyspaces
@@ -180,6 +181,17 @@ colorlinks,
 ]{hyperref}
 \usepackage{hologo}
 \usepackage{graphicx}
+\usepackage{tabularx}
+\renewcommand\tabularxcolumn[1]{m{#1}}
+\usepackage{ltablex}
+\newcommand{\ColorName}[2]{%
+    \raisebox{0.25em}{%
+        \colorbox[RGB]{#2}{%
+            \phantom{\rule{0.8em}{0em}}%
+        }%
+    }
+    \texttt{\detokenize{#1}}%
+}
 \EnableCrossrefs
 \CodelineIndex
 \RecordChanges
@@ -235,6 +247,28 @@ colorlinks,
 % colours into the presentation. The colours change best with the
 % \textsf{whale} colortheme or similar.
 %^^A
+% \subsection{List of \textsf{orgstyle} files}
+% The following organisation styles are automatically part
+% of this package. Each font is typeset in their font type (i.e.,
+% \textrm{roman}, \textrm{sans serif} and \texttt{typewriter}).
+% Furthermore, the font that is the default is boldened.\\
+% \begin{tabularx}{\textwidth}{| m{0.15\textwidth} | m{0.15\textwidth} | m{0.2\textwidth} | X |}\hline
+% \textsf{orgstyle} & Organisation & Fonts & Colour scheme\\\hline
+% \textsf{vuamst} & Vrije Universiteit Amsterdam & \textbf{\textsf{Roboto}} &
+% \ColorName{VUblue_primary}{000,119,179}\newline
+% \ColorName{VUblue_secondary}{093,173,208}\newline
+% \ColorName{VUblue_tertiary}{212,239,250}\newline
+% \ColorName{VUorange_primary}{204,065,000}\newline
+% \ColorName{VUorange_secondary}{232,105,045}\newline
+% \ColorName{VUorange_tertiary}{252,211,182}\newline
+% \ColorName{VUgreen_primary}{000,128,083}\newline
+% \ColorName{VUgreen_secondary}{079,175,072}\newline
+% \ColorName{VUgreen_tertiary}{235,240,198}\newline
+% \ColorName{VUpurple_primary}{059,033,113}\newline
+% \ColorName{VUpurple_secondary}{142,077,164}\newline
+% \ColorName{VUpurple_tertiary}{221,198,238}\\\hline
+% \end{tabularx}
+%^^A
 % \subsection{Example of an \textsf{orgstyle} file}\label{sec:orgstyleexample}
 % Below is an example of a file that can be used with \textsf{orgstyle}.
 % All \textsf{orgstyle} files should follow the naming scheme of
@@ -243,14 +277,6 @@ colorlinks,
 % We will name the file |orgstyle-ukgov.sty|. It can be used by running the
 % macro |\orgstyle{ukgov}| in your \LaTeX{} file. An example of this style can be
 % found in \autoref{fig:ukgovexample}.
-% \begin{figure}
-%   \centering
-%   \includegraphics[width=0.6\textwidth]{ukgovtest.pdf}
-%   \caption{An example of a \textsf{beamer} slide using the \textsf{Frankfurt}
-%   beamer theme, \textsf{orgstyle} and the \texttt{ukgov} style as outlined in 
-%   \autoref{sec:orgstyleexample}. \hologo{pdfLaTeX} was used for compilation
-%   (and hence the actual font is \texttt{phv}).}\label{fig:ukgovexample}
-% \end{figure}
 % \begin{verbatim}
 % 1. \definecolor{UKPrimaryBlue}{RGB}{029,112,184}
 % 2. \definecolor{UKAccentTeal}{RGB}{000,255,224}
@@ -269,6 +295,14 @@ colorlinks,
 %14.     <all>
 %14. }{}
 % \end{verbatim}
+% \begin{figure}
+%   \centering
+%   \includegraphics[width=0.6\textwidth]{ukgovtest.pdf}
+%   \caption{An example of a \textsf{beamer} slide using the \textsf{Frankfurt}
+%   beamer theme, \textsf{orgstyle} and the \texttt{ukgov} style as outlined in 
+%   \autoref{sec:orgstyleexample}. \hologo{pdfLaTeX} was used for compilation
+%   (and hence the actual font is \texttt{phv}).}\label{fig:ukgovexample}
+% \end{figure}
 % We will now go through this code line by line.\par
 % In lines \(1--5\), we define all relevant colours for the house style.
 % Give them a recognisable name, so they can easily be used by the
@@ -426,4 +460,46 @@ colorlinks,
 %    \begin{macrocode}
 %</orgstyle>
 %    \end{macrocode}
+% From here on, we will consider the implementation
+% of the orgsty files of various organisations.
+% Wherever possible, we only use freely available
+% fonts, in order to respect users (usually students)
+% who don't have access to those fonts.
+% 
+% \subsection{\textsf{vuamst}: Vrije Universiteit Amsterdam}
+% \href{https://vu.nl/en/about-vu/more-about/corporate-identity}{Source.}\par
+%    \begin{macrocode}
+%<*vuamst>
+\definecolor{VUblue_primary}{RGB}{000,119,179}
+\definecolor{VUblue_secondary}{RGB}{093,173,208}
+\definecolor{VUblue_tertiary}{RGB}{212,239,250}
+
+\definecolor{VUorange_primary}{RGB}{204,065,000}
+\definecolor{VUorange_secondary}{RGB}{232,105,045}
+\definecolor{VUorange_tertiary}{RGB}{252,211,182}
+
+\definecolor{VUgreen_primary}{RGB}{000,128,083}
+\definecolor{VUgreen_secondary}{RGB}{079,175,072}
+\definecolor{VUgreen_tertiary}{RGB}{235,240,198}
+
+\definecolor{VUpurple_primary}{RGB}{059,033,113}
+\definecolor{VUpurple_secondary}{RGB}{142,077,164}
+\definecolor{VUpurple_tertiary}{RGB}{221,198,238}
+
+\def\orgstyle@pdffont{\usepackage{roboto}}
+\def\orgstyle@tfsansfont{Roboto}
+\renewcommand{\familydefault}{\sfdefault}
+\@ifclassloaded{beamer}{%
+    \mode<presentation>
+    \setbeamercolor{structure}{fg=VUblue_primary}
+    \setbeamercolor{alerted text}{fg=VUorange_primary}
+    \setbeamercolor{example text}{fg=VUgreen_primary}
+    \mode
+    <all>
+}{}
+%</vuamst>
+%    \end{macrocode}
+% Note that the VU recommends the font DIN Pro
+% for printed material and Roboto for online expressions.
+% Since Roboto is free to use, we prefer it.
 % \Finale
