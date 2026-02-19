@@ -130,6 +130,7 @@ If you're using MiKTeX, open MiKTeX console, go to
 \usedir{tex/latex/orgstyle}
 \generate{
     \file{orgstyle.sty}{\from{\jobname.dtx}{orgstyle}}
+    \file{orgstyles/orgstyle-ru-nl.sty}{\from{\jobname.dtx}{ru-nl}}
     \file{orgstyles/orgstyle-uu-nl.sty}{\from{\jobname.dtx}{uu-nl}}
     \file{orgstyles/orgstyle-vuamst.sty}{\from{\jobname.dtx}{vuamst}}
 }
@@ -248,13 +249,29 @@ colorlinks,
 % colours into the presentation. The colours change best with the
 % \textsf{whale} colortheme or similar.
 %^^A
+% \clearpage
 % \subsection{List of \textsf{orgstyle} files}
 % The following organisation styles are automatically part
 % of this package. Each font is typeset in their font type (i.e.,
-% \textrm{roman}, \textrm{sans serif} and \texttt{typewriter}).
+% \textrm{roman}, \textsf{sans serif} and \texttt{typewriter}).
 % Furthermore, the font that is the default is boldened.\\
 % \begin{tabularx}{\textwidth}{| m{0.15\textwidth} | m{0.15\textwidth} | m{0.2\textwidth} | X |}\hline
 % \textsf{orgstyle} & Organisation & Fonts & Colour scheme\\\hline
+% ^^A
+% \textsf{ru-nl} & Radboud University & \textbf{\textsf{Open Sans}} &
+% \ColorName{RUred-impact}{227,000,011}\newline
+% \ColorName{RUpoppy}{255,066,075}\newline
+% \ColorName{RUlady-bug}{190,049,026}\newline
+% \ColorName{RUberry}{143,032,017}\newline
+% \ColorName{RUmaroon}{115,014,004}\newline
+% \ColorName{RUmahogany}{074,000,004}\newline
+% \ColorName{RUgray}{121,119,119}\newline
+% \ColorName{RUorange}{207,082,008}\newline
+% \ColorName{RUblue}{000,138,203}\newline
+% \ColorName{RUpetrol}{000,143,137}\newline
+% \ColorName{RUgreen}{074,169,067}\newline
+% \ColorName{RUyellow}{204,175,000}\\\hline
+% ^^A
 % \textsf{uu-nl} & Utrecht University & \textbf{Merriweather}\newline\textsf{Open Sans} &
 % \ColorName{UUyellow}{255,205,000}\newline
 % \ColorName{UUred}{192,010,053}\\\hline
@@ -470,6 +487,38 @@ colorlinks,
 % Wherever possible, we only use freely available
 % fonts, in order to respect users (usually students)
 % who don't have access to those fonts.
+% 
+% \subsection{\textsf{ru-nl}: Radboud University}
+% \href{https://www.ru.nl/en/staff/services/campus-facilities-buildings/communication-and-promotion/design/corporate-identity}{Source.}\par
+%    \begin{macrocode}
+%<*ru-nl>
+\definecolor{RUred-impact}{RGB}{227,000,011}
+\definecolor{RUpoppy}{RGB}{255,066,075}
+\definecolor{RUlady-bug}{RGB}{190,049,026}
+\definecolor{RUberry}{RGB}{143,032,017}
+\definecolor{RUmaroon}{RGB}{115,014,004}
+\definecolor{RUmahogany}{RGB}{074,000,004}
+
+\definecolor{RUgray}{RGB}{121,119,119}
+\definecolor{RUorange}{RGB}{207,082,008}
+\definecolor{RUblue}{RGB}{000,138,203}
+\definecolor{RUpetrol}{RGB}{000,143,137}
+\definecolor{RUgreen}{RGB}{074,169,067}
+\definecolor{RUyellow}{RGB}{204,175,000}
+
+\def\orgstyle@pdffont{\usepackage[defaultsans]{opensans}}
+\def\orgstyle@tfsansfont{Open Sans}
+\renewcommand{\familydefault}{\sfdefault}
+\@ifclassloaded{beamer}{%
+    \mode<presentation>
+    \setbeamercolor{structure}{fg=RUred-impact}
+    \setbeamercolor{alerted text}{fg=RUorange}
+    \setbeamercolor{example text}{fg=RUgreen}
+    \mode
+    <all>
+}{}
+%</ru-nl>
+%    \end{macrocode}
 % 
 % \subsection{\textsf{uu-nl}: Utrecht University}
 % \href{https://www.uu.nl/en/organisation/corporate-identity/brand-policy}{Source.}\par
