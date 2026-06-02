@@ -90,7 +90,7 @@ License: [LPPL1.3c](https://www.latex-project.org/lppl.txt)
 \input docstrip.tex
 \Msg{************************************************************************}
 \Msg{* Installation}
-\Msg{* Package: orgstyle 2026/02/17 v1.0}
+\Msg{* Package: orgstyle 2026/06/02 v1.0}
 \Msg{************************************************************************}
 
 \keepsilent
@@ -114,7 +114,8 @@ The current maintainer of this work is Jesse Straat.
 
 This work consists of the main file orgstyle.dtx
 and the derived files
-    orgstyle.sty, orgstyle.pdf, orgstyle.ins
+    orgstyle.sty, orgstyle.pdf, orgstyle.ins, orgstyle-ru-nl.sty,
+    orgstyle-uu-nl.sty, orgstyle-vuamst.sty
 
 If you are looking for comments or documentation, you won't find
 any in the source. These packages make use of literate programming, which means
@@ -130,9 +131,9 @@ If you're using MiKTeX, open MiKTeX console, go to
 \usedir{tex/latex/orgstyle}
 \generate{
     \file{orgstyle.sty}{\from{\jobname.dtx}{orgstyle}}
-    \file{orgstyles/orgstyle-ru-nl.sty}{\from{\jobname.dtx}{ru-nl}}
-    \file{orgstyles/orgstyle-uu-nl.sty}{\from{\jobname.dtx}{uu-nl}}
-    \file{orgstyles/orgstyle-vuamst.sty}{\from{\jobname.dtx}{vuamst}}
+    \file{orgstyle-ru-nl.sty}{\from{\jobname.dtx}{ru-nl}}
+    \file{orgstyle-uu-nl.sty}{\from{\jobname.dtx}{uu-nl}}
+    \file{orgstyle-vuamst.sty}{\from{\jobname.dtx}{vuamst}}
 }
 
 \obeyspaces
@@ -142,6 +143,7 @@ If you're using MiKTeX, open MiKTeX console, go to
 \Msg{* files into a directory searched by TeX:}
 \Msg{*}
 \Msg{*    orgstyle.sty}
+\Msg{*    any orgstyle sty file you want to use}
 \Msg{*}
 \Msg{* To produce the documentation run the file `orgstyle.dtx'}
 \Msg{* through LaTeX.}
@@ -225,7 +227,7 @@ colorlinks,
 %
 % \tableofcontents
 %
-% \changes{v1.0}{2026/02/17}{First release}
+% \changes{v1.0}{2026/06/02}{First release}
 %
 %
 %
@@ -414,7 +416,7 @@ colorlinks,
 % \setcounter{CodelineNo}{0}
 %    \begin{macrocode}
 %<*orgstyle>
-\ProvidesPackage{orgstyle}[2025/02/18 v1.0 Organisation style implementation]
+\ProvidesPackage{orgstyle}[2026/06/02 v1.0 Organisation style implementation]
 \RequirePackage{iftex}
 \RequirePackage{xcolor}
 %    \end{macrocode}

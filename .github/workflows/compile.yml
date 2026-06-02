@@ -10,24 +10,21 @@ jobs:
         uses: xu-cheng/texlive-action@v3
         with:
           run: |
-            mkdir orgstyles
             pdflatex orgstyle.dtx
             makeindex -s gind.ist -o orgstyle.ind orgstyle.idx
             makeindex -s gglo.ist -o orgstyle.gls orgstyle.glo
             pdflatex orgstyle.dtx
       - name: Move CTAN files into folder
         run: |
-          mkdir ctan
-          mkdir ctan/orgstyle
+          mkdir -p ctan/orgstyle
           mv orgstyle.dtx ctan/orgstyle/orgstyle.dtx
           mv orgstyle.ins ctan/orgstyle/orgstyle.ins
           mv README.md ctan/orgstyle/README.md
           mv orgstyle.pdf ctan/orgstyle/orgstyle-doc.pdf
       - name: Move sty files into folder
         run: |
-          mkdir -p sty/orgstyles
-          mv orgstyle.sty sty/orgstyle.sty
-          cp -r orgstyles sty
+          mkdir sty
+          mv *.sty sty
       - name: Zip CTAN files
         uses: actions/upload-artifact@v4
         with:
