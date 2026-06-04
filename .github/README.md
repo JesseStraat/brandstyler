@@ -1,6 +1,9 @@
 # `orgstyle`
 
-PLACEHOLDER READEM
+`orgstyle` automatically adapts the
+style of a LaTeX document to that of a specific organisation.
+It is also compatible with `beamer`, able to change
+the style of many beamerthemes.
 
 # Installation
 Run the following in the command line:
@@ -42,7 +45,7 @@ as the ones supplied in this package.
 3. Come up with a sensible, unique identifier. For example,
 Utrecht University was named `uu-nl` instead of `uu` to discern
 it from Uppsala Universitet (which should be named
-`uu-se`). For country abbreviations, make sure to low
+`uu-se`). For country abbreviations, make sure to follow
 [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes)
 standards.
 4. If possible, use freely available or open source fonts.
