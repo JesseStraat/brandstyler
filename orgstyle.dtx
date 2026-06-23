@@ -117,7 +117,7 @@ License: [LPPL1.3c](https://www.latex-project.org/lppl.txt)
 \input docstrip.tex
 \Msg{************************************************************************}
 \Msg{* Installation}
-\Msg{* Package: orgstyle 2026/06/04 v1.0}
+\Msg{* Package: orgstyle 2026/06/23 v1.0}
 \Msg{************************************************************************}
 
 \keepsilent
@@ -257,7 +257,7 @@ colorlinks,
 %
 % \tableofcontents
 %
-% \changes{v1.0}{2026/06/04}{First release}
+% \changes{v1.0}{2026/06/23}{First release}
 %
 %
 %
@@ -310,7 +310,10 @@ colorlinks,
 %     \end{theorem}
 % \end{frame}
 % \end{document}
-% \end{verbatim}
+% \end{verbatim}\par
+% As part of importing the style, some fonts are imported. If the
+% correct font is not found on your computer, \textsf{orgstyle} will
+% throw a warning informing you of that fact.
 %^^A
 % \clearpage
 % \subsection{List of \textsf{orgstyle} files}\label{sec:filelist}
@@ -363,19 +366,19 @@ colorlinks,
 % macro |\orgstyle{ukgov}| in your \LaTeX{} file. An example of this style can be
 % found in \autoref{fig:ukgovexample}.
 % \begin{verbatim}
-% 1. \definecolor{UKPrimaryBlue}{RGB}{029,112,184}
-% 2. \definecolor{UKAccentTeal}{RGB}{000,255,224}
-% 3. \definecolor{UKPrimaryGreen}{RGB}{017,125,090}
-% 4. \definecolor{UKPrimaryRed}{RGB}{202,053,053}
-% 5. \definecolor{UKPrimaryYellow}{RGB}{255,221,000}
+% 1. \definecolor{UKprimary-blue}{RGB}{029,112,184}
+% 2. \definecolor{UKaccent-teal}{RGB}{000,255,224}
+% 3. \definecolor{UKprimary-green}{RGB}{017,125,090}
+% 4. \definecolor{UKprimary-red}{RGB}{202,053,053}
+% 5. \definecolor{UKprimary-yellow}{RGB}{255,221,000}
 % 6. \def\orgstyle@tfsansfont{GDS Transport}
 % 7. \def\orgstyle@pdffont{\renewcommand\sfdefault{phv}}
 % 8. \renewcommand{\familydefault}{\sfdefault}
 % 9. \@ifclassloaded{beamer}{%
 %10.     \mode<presentation>
-%11.     \setbeamercolor{structure}{fg=UKPrimaryBlue}
-%12.     \setbeamercolor{alerted text}{fg=UKPrimaryRed}
-%13.     \setbeamercolor{example text}{fg=UKPrimaryGreen}
+%11.     \setbeamercolor{structure}{fg=UKprimary-blue}
+%12.     \setbeamercolor{alerted text}{fg=UKprimary-red}
+%13.     \setbeamercolor{example text}{fg=UKprimary-green}
 %13.     \mode
 %14.     <all>
 %14. }{}
@@ -393,7 +396,9 @@ colorlinks,
 % Give them a recognisable name, so they can easily be used by the
 % end user. Make sure not to use actual names of colours,
 % like ``blue'' or ``maroon'', since they may interfere with
-% those defined by \LaTeX{} itself. Note that not all colours may be
+% those defined by \LaTeX{} itself. It's best to prepend each colour with
+% a (capitalised) abbreviation of the organisation, and not use capital
+% letters for the colour itself. Note that not all colours may be
 % actually used by \textsf{orgstyle}; defining them here is nonetheless
 % useful for users.\par
 % We define the fonts in lines 6--8. The UK government only specifies a sans
@@ -403,9 +408,8 @@ colorlinks,
 % \DescribeMacro{\orgstyle@tfmainfont} |\orgstyle@tfmainfont|,
 % and a typewriter font can be defined using
 % \DescribeMacro{\orgstyle@tfmonofont} |\orgstyle@tfmonofont|.\par
-% If a user doesn't have the correct font installed, \textsf{orgstyle}
-% will throw a warning. For \hologo{pdfLaTeX} users, just selecting
-% a font won't work, since \hologo{pdfLaTeX} doesn't support ordinary
+% For \hologo{pdfLaTeX} users, just selecting a font won't work,
+% since \hologo{pdfLaTeX} doesn't support ordinary
 % font formats such as |otf| and |ttf|. Therefore, we will have to
 % use a \hologo{pdfLaTeX}-compatible font, instead. We save the code used
 % to load all fonts into a single variable, \DescribeMacro{\orgstyle@pdffont}
@@ -416,7 +420,7 @@ colorlinks,
 % support Helvetica, under the name |phv|.\par
 % If we were to use a font for which we need
 % an external package, we should instead use |\usepackage{PACKAGE}| to
-% load the fonts. I we also want to load a serif or typewriter font,
+% load the fonts. If we also want to load a serif or typewriter font,
 % we should put them all in the single variable.\par
 % Since the UK government brand guide specifies only a sans serif font
 % should be used, we should also tell \LaTeX{} to use it instead of the
@@ -460,11 +464,15 @@ colorlinks,
 %   \item If possible, use freely available or open source fonts.
 %   \item Never include logos; they are protected by copyright, and
 %   hence cannot be part of this open source project.
+%   \item Supply a source where the style guide is defined. It's
+%   alright (but not preferable) if the style guide is inaccessible
+%   for people outside the organisation. However, in such cases, the
+%   source should be a public ``lander'' which forwards to the guide,
+%   so one can check it's a genuine style guide.
 % \end{enumerate}
 % If you don't have the technical knowledge to make an organisation
 % style, feel free to open an issue on GitHub requesting one. Please include
-% all necessary information (colours, fonts), or even better,
-% provide a link to an official style guide.
+% a link to an official style guide.
 %
 %
 %
@@ -481,7 +489,7 @@ colorlinks,
 % \setcounter{CodelineNo}{0}
 %    \begin{macrocode}
 %<*orgstyle>
-\ProvidesPackage{orgstyle}[2026/06/04 v1.0 Organisation style implementation]
+\ProvidesPackage{orgstyle}[2026/06/23 v1.0 Organisation style implementation]
 \RequirePackage{iftex}
 \RequirePackage{xcolor}
 %    \end{macrocode}
