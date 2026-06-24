@@ -3,7 +3,8 @@
 `brandstyler` automatically adapts the
 style of a LaTeX document to that of a specific organisation.
 It is also compatible with `beamer`, able to change
-the style of many beamerthemes.
+the style of many beamerthemes. It currently supports the
+adaption of fonts and colours.
 
 # Installation
 Run the following in the command line:
