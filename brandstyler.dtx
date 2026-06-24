@@ -14,50 +14,50 @@
 % 
 % The Current Maintainer of this work is Jesse Straat.
 %
-% This work consists of the main file orgstyle.dtx
+% This work consists of the main file brandstyler.dtx
 % and the derived files
-%      orgstyle.sty, orgstyle.pdf, orgstyle.ins
+%      brandstyler.sty, brandstyler.pdf, brandstyler.ins
 %
 % Unpacking:
-% (a) If orgstyle.ins is present:
-%		pdflatex orgstyle.ins
-% (b) If orgstyle.ins is absent:
-%		pdflatex orgstyle.dtx
+% (a) If brandstyler.ins is present:
+%		pdflatex brandstyler.ins
+% (b) If brandstyler.ins is absent:
+%		pdflatex brandstyler.dtx
 %
 % Documentation:
-% 	    pdflatex orgstyle.dtx
-%       makeindex -s gind.ist -o orgstyle.ind orgstyle.idx
-%       makeindex -s gglo.ist -o orgstyle.gls orgstyle.glo
-%       pdflatex orgstyle.dtx
+% 	    pdflatex brandstyler.dtx
+%       makeindex -s gind.ist -o brandstyler.ind brandstyler.idx
+%       makeindex -s gglo.ist -o brandstyler.gls brandstyler.glo
+%       pdflatex brandstyler.dtx
 %
 %<*ignore>
 \iffalse
 %</ignore>
 %
 %<*readme>
-# `orgstyle`
+# `brandstyler`
 
-`orgstyle` automatically adapts the
+`brandstyler` automatically adapts the
 style of a LaTeX document to that of a specific organisation.
 It is also compatible with `beamer`, able to change
 the style of many beamerthemes.
 
 # Installation
 Run the following in the command line:
-1. If orgstyle.ins is present:
-    `pdflatex orgstyle.ins`
-2. If orgstyle.ins is absent:
-    `pdflatex orgstyle.dtx`
+1. If brandstyler.ins is present:
+    `pdflatex brandstyler.ins`
+2. If brandstyler.ins is absent:
+    `pdflatex brandstyler.dtx`
 
 Move `.sty` and `.cls` files to a folder that TeX can find.
 
 # Documentation
 Run the following in the command line:
 ```
-pdflatex orgstyle.dtx
-makeindex -s gind.ist -o orgstyle.ind orgstyle.idx
-makeindex -s gglo.ist -o orgstyle.gls orgstyle.glo
-pdflatex orgstyle.dtx
+pdflatex brandstyler.dtx
+makeindex -s gind.ist -o brandstyler.ind brandstyler.idx
+makeindex -s gglo.ist -o brandstyler.gls brandstyler.glo
+pdflatex brandstyler.dtx
 ```
 This automatically unpacks the package, as well.
 
@@ -65,21 +65,21 @@ This automatically unpacks the package, as well.
 If you are looking for comments or documentation, you won't find
 any in the source. These packages make use of literate programming, which means
 that the documentation is given in the form of a pdf file. You can
-probably find orgstyle.pdf in this folder, by running "texdoc --view orgstyle"
+probably find brandstyler.pdf in this folder, by running "texdoc --view brandstyler"
 in the command line, or Googling
 "[your distribution] how to find package documentation".
 If you're using MiKTeX, open MiKTeX console, go to
-"Documentation" and look for "orgstyle".
+"Documentation" and look for "brandstyler".
 
 # Contributing
-Contributions of custom organisation styles are highly encouraged.
+Contributions of custom brand styles are highly encouraged.
 Please create a pull request on our GitHub repository at
-https://github.com/JesseStraat/orgstyle. Make sure to follow
+https://github.com/JesseStraat/brandstyler. Make sure to follow
 the following guidelines:
-1. Organisation style files should follow the same structure
+1. Brand style files should follow the same structure
 as the ones supplied in this package.
 2. The file should be implemented and documented in
-`orgstyle.dtx`. Don't forget to update the list of files.
+`brandstyler.dtx`. Don't forget to update the list of files.
 3. Come up with a sensible, unique identifier. For example,
 Utrecht University was named `uu-nl` instead of `uu` to discern
 it from Uppsala Universitet (which should be named
@@ -90,10 +90,9 @@ standards.
 5. Never include logos; they are protected by copyright, and
 hence cannot be part of this open source project.
 
-If you don't have the technical knowledge to make an organisation
+If you don't have the technical knowledge to make a brand
 style, feel free to open an issue on GitHub requesting one. Please include
-all necessary information (colours, fonts), or even better,
-provide a link to an official style guide.
+a link to an official style guide.
 
 ---
 
@@ -101,7 +100,7 @@ provide a link to an official style guide.
 
 License: [LPPL1.3c](https://www.latex-project.org/lppl.txt)
 
-[GitHub Repository](https://github.com/JesseStraat/orgstyle)
+[GitHub Repository](https://github.com/JesseStraat/brandstyler)
 
 %</readme>
 %
@@ -117,7 +116,7 @@ License: [LPPL1.3c](https://www.latex-project.org/lppl.txt)
 \input docstrip.tex
 \Msg{************************************************************************}
 \Msg{* Installation}
-\Msg{* Package: orgstyle 2026/06/23 v1.0}
+\Msg{* Package: brandstyler 2026/06/23 v1.0}
 \Msg{************************************************************************}
 
 \keepsilent
@@ -139,28 +138,28 @@ This work has the LPPL maintenance status `maintained'.
 
 The current maintainer of this work is Jesse Straat.
 
-This work consists of the main file orgstyle.dtx
+This work consists of the main file brandstyler.dtx
 and the derived files
-    orgstyle.sty, orgstyle.pdf, orgstyle.ins, orgstyle-ru-nl.sty,
-    orgstyle-uu-nl.sty, orgstyle-vuamst.sty
+    brandstyler.sty, brandstyler.pdf, brandstyler.ins, brandstyler-ru-nl.sty,
+    brandstyler-uu-nl.sty, brandstyler-vuamst.sty
 
 If you are looking for comments or documentation, you won't find
 any in the source. These packages make use of literate programming, which means
 that the documentation is given in the form of a pdf file. You can
-probably find orgstyle.pdf in this folder, by running "texdoc --view orgstyle"
+probably find brandstyler.pdf in this folder, by running "texdoc --view brandstyler"
 in the command line, or Googling
 "[your distribution] how to find package documentation".
 If you're using MiKTeX, open MiKTeX console, go to
-"Documentation" and look for "orgstyle".
+"Documentation" and look for "brandstyler".
 
 \endpreamble
 
-\usedir{tex/latex/orgstyle}
+\usedir{tex/latex/brandstyler}
 \generate{
-    \file{orgstyle.sty}{\from{\jobname.dtx}{orgstyle}}
-    \file{orgstyle-ru-nl.sty}{\from{\jobname.dtx}{ru-nl}}
-    \file{orgstyle-uu-nl.sty}{\from{\jobname.dtx}{uu-nl}}
-    \file{orgstyle-vuamst.sty}{\from{\jobname.dtx}{vuamst}}
+    \file{brandstyler.sty}{\from{\jobname.dtx}{brandstyler}}
+    \file{brandstyler-ru-nl.sty}{\from{\jobname.dtx}{ru-nl}}
+    \file{brandstyler-uu-nl.sty}{\from{\jobname.dtx}{uu-nl}}
+    \file{brandstyler-vuamst.sty}{\from{\jobname.dtx}{vuamst}}
 }
 
 \obeyspaces
@@ -169,10 +168,10 @@ If you're using MiKTeX, open MiKTeX console, go to
 \Msg{* To finish the installation you have to move the following}
 \Msg{* files into a directory searched by TeX:}
 \Msg{*}
-\Msg{*    orgstyle.sty}
-\Msg{*    any orgstyle sty file you want to use}
+\Msg{*    brandstyler.sty}
+\Msg{*    any brandstyler sty file you want to use}
 \Msg{*}
-\Msg{* To produce the documentation run the file `orgstyle.dtx'}
+\Msg{* To produce the documentation run the file `brandstyler.dtx'}
 \Msg{* through LaTeX.}
 \Msg{*}
 \Msg{* Happy TeXing!}
@@ -183,13 +182,13 @@ If you're using MiKTeX, open MiKTeX console, go to
 %<install>\endbatchfile
 %
 %<*ignore>
-\usedir{source/latex/orgstyle}
+\usedir{source/latex/brandstyler}
 \generate{
     \file{\jobname.ins}{\from{\jobname.dtx}{install}}
 }
 
 \nopreamble\nopostamble
-\usedir{doc/latex/orgstyle}
+\usedir{doc/latex/brandstyler}
 \generate{
     \file{README.md}{\from{\jobname.dtx}{readme}}
 }
@@ -240,7 +239,7 @@ colorlinks,
 % \DoNotIndex{\renewcommand,\RequirePackage,\setbeamercolor,\sfdefault,\usepackage}
 %
 % \title{^^A
-%     orgstyle\thanks{^^A
+%     brandstyler\thanks{^^A
 %         Version \fileversion, last revised \filedate.^^A
 %     }^^A
 % }^^A
@@ -252,7 +251,7 @@ colorlinks,
 % \maketitle
 %
 % \begin{abstract}
-%     \noindent \textsf{orgstyle} automatically adapts the
+%     \noindent \textsf{brandstyler} automatically adapts the
 %    style of a \LaTeX{} document to that of a specific organisation.
 %    It is also compatible with \textsf{beamer}, able to change
 %    the style of many beamerthemes.
@@ -274,26 +273,26 @@ colorlinks,
 %
 %
 % \section{Documentation}
-% This is the documentation to \textsf{orgstyle}; a package
+% This is the documentation to \textsf{brandstyler}; a package
 % that automatically adapts
-% the style of organisations to your \LaTeX{} document.
+% the branding/style of organisations to your \LaTeX{} document.
 % This is done mainly by loading the organisation's fonts and
 % defining some colours.\par
 % In the case of \textsf{beamer} presentations (and posters),
-% \textsf{orgstyle} also automatically implements the organisation's
+% \textsf{brandstyler} also automatically implements the organisation's
 % colours into the presentation. The colours change best with the
 % \textsf{whale} colortheme or similar.
 %^^A
 % \subsection{Usage}
-% To use this package, use |\usepackage{orgstyle}|. Then, load
-% your organisation's style using |\orgstyle{ORGANISATION}|. Make
+% To use this package, use |\usepackage{brandstyler}|. Then, load
+% your organisation's style using |\brandstyle{ORGANISATION}|. Make
 % sure to do this after loading other style packages, such as a
 % beamertheme, to make sure nothing is overwritten.\par
 % An example of implementation in an article is given below.
 % \begin{verbatim}
 % \documentclass{article}
-% \usepackage{orgstyle}
-% \orgstyle{vuamst}
+% \usepackage{brandstyler}
+% \brandstyle{vuamst}
 % 
 % \begin{document}
 %     Lorem Ipsum.
@@ -303,8 +302,8 @@ colorlinks,
 % \begin{verbatim}
 % \documentclass{beamer}
 % \usetheme{Frankfurt}
-% \usepackage{orgstyle}
-% \orgstyle{vuamst}
+% \usepackage{brandstyler}
+% \brandstyle{vuamst}
 % 
 % \begin{document}
 % \begin{frame}{Foo Theory}
@@ -315,17 +314,17 @@ colorlinks,
 % \end{document}
 % \end{verbatim}\par
 % As part of importing the style, some fonts are imported. If the
-% correct font is not found on your computer, \textsf{orgstyle} will
+% correct font is not found on your computer, \textsf{brandstyler} will
 % throw a warning informing you of that fact.
 %^^A
 % \clearpage
-% \subsection{List of \textsf{orgstyle} files}\label{sec:filelist}
-% The following organisation styles are automatically part
+% \subsection{List of \textsf{brandstyler} files}\label{sec:filelist}
+% The following brand styles are automatically part
 % of this package. Each font is typeset in their font type (i.e.,
 % \textrm{roman}, \textsf{sans serif} and \texttt{typewriter}).
-% Furthermore, the font that is the default is boldened.\\
+% Furthermore, the font that is the default is boldened.
 % \begin{tabularx}{\textwidth}{| m{0.15\textwidth} | m{0.15\textwidth} | m{0.2\textwidth} | X |}\hline
-% \textsf{orgstyle} & Organisation & Fonts & Colour scheme\\\hline
+% \textsf{brandstyle} & Organisation & Fonts & Colour scheme\\\hline
 % ^^A
 % \textsf{ru-nl} & Radboud University & \textbf{\textsf{Open Sans}} &
 % \ColorName{RUred-impact}{227,000,011}\newline
@@ -360,13 +359,13 @@ colorlinks,
 % \ColorName{VUpurple_tertiary}{221,198,238}\\\hline
 % \end{tabularx}
 %^^A
-% \subsection{Example of an \textsf{orgstyle} file}\label{sec:orgstyleexample}
-% Below is an example of a file that can be used with \textsf{orgstyle}.
-% All \textsf{orgstyle} files should follow the naming scheme of
-% |orgstyle-NAME.sty|. As an example, we will implement the brand guide
+% \subsection{Example of an \textsf{brandstyler} file}\label{sec:brandstylerexample}
+% Below is an example of a file that can be used with \textsf{brandstyler}.
+% All \textsf{brandstyler} files should follow the naming scheme of
+% |brandstyler-NAME.sty|. As an example, we will implement the brand guide
 % of the \href{https://www.gov.uk/government/publications/govuk-brand-guidelines}{United Kingdom government}.
-% We will name the file |orgstyle-ukgov.sty|. It can be used by running the
-% macro |\orgstyle{ukgov}| in your \LaTeX{} file. An example of this style can be
+% We will name the file |brandstyler-ukgov.sty|. It can be used by running the
+% macro |\brandstyle{ukgov}| in your \LaTeX{} file. An example of this style can be
 % found in \autoref{fig:ukgovexample}.
 % \begin{verbatim}
 % 1. \definecolor{UKprimary-blue}{RGB}{029,112,184}
@@ -374,8 +373,8 @@ colorlinks,
 % 3. \definecolor{UKprimary-green}{RGB}{017,125,090}
 % 4. \definecolor{UKprimary-red}{RGB}{202,053,053}
 % 5. \definecolor{UKprimary-yellow}{RGB}{255,221,000}
-% 6. \def\orgstyle@tfsansfont{GDS Transport}
-% 7. \def\orgstyle@pdffont{\renewcommand\sfdefault{phv}}
+% 6. \def\brandstyler@tfsansfont{GDS Transport}
+% 7. \def\brandstyler@pdffont{\renewcommand\sfdefault{phv}}
 % 8. \renewcommand{\familydefault}{\sfdefault}
 % 9. \@ifclassloaded{beamer}{%
 %10.     \mode<presentation>
@@ -390,8 +389,8 @@ colorlinks,
 %   \centering
 %   \includegraphics[width=0.6\textwidth]{ukgovtest.pdf}
 %   \caption{An example of a \textsf{beamer} slide using the \textsf{Frankfurt}
-%   beamer theme, \textsf{orgstyle} and the \texttt{ukgov} style as outlined in 
-%   \autoref{sec:orgstyleexample}. \hologo{pdfLaTeX} was used for compilation
+%   beamer theme, \textsf{brandstyler} and the \texttt{ukgov} style as outlined in 
+%   \autoref{sec:brandstylerexample}. \hologo{pdfLaTeX} was used for compilation
 %   (and hence the actual font is \texttt{phv}).}\label{fig:ukgovexample}
 % \end{figure}
 % We will now go through this code line by line.\par
@@ -402,21 +401,21 @@ colorlinks,
 % those defined by \LaTeX{} itself. It's best to prepend each colour with
 % a (capitalised) abbreviation of the organisation, and not use capital
 % letters for the colour itself. Note that not all colours may be
-% actually used by \textsf{orgstyle}; defining them here is nonetheless
+% actually used by \textsf{brandstyler}; defining them here is nonetheless
 % useful for users.\par
 % We define the fonts in lines 6--8. The UK government only specifies a sans
 % serif font, GDS Transport. We save the font to a variable using
-% \DescribeMacro{\orgstyle@tfsansfont} |\orgstyle@tfsansfont|.
+% \DescribeMacro{\brandstyler@tfsansfont} |\brandstyler@tfsansfont|.
 % A serif/Roman font can be defined in the same way using
-% \DescribeMacro{\orgstyle@tfmainfont} |\orgstyle@tfmainfont|,
+% \DescribeMacro{\brandstyler@tfmainfont} |\brandstyler@tfmainfont|,
 % and a typewriter font can be defined using
-% \DescribeMacro{\orgstyle@tfmonofont} |\orgstyle@tfmonofont|.\par
+% \DescribeMacro{\brandstyler@tfmonofont} |\brandstyler@tfmonofont|.\par
 % For \hologo{pdfLaTeX} users, just selecting a font won't work,
 % since \hologo{pdfLaTeX} doesn't support ordinary
 % font formats such as |otf| and |ttf|. Therefore, we will have to
 % use a \hologo{pdfLaTeX}-compatible font, instead. We save the code used
-% to load all fonts into a single variable, \DescribeMacro{\orgstyle@pdffont}
-% |\orgstyle@pdffont| in line 7.\par
+% to load all fonts into a single variable, \DescribeMacro{\brandstyler@pdffont}
+% |\brandstyler@pdffont| in line 7.\par
 % Of course, \hologo{pdfLaTeX} doesn't support GDS Transport, at all.
 % As an alternative, the UK government mentions using Neue Helvetica.
 % Although \hologo{pdfLaTeX} doesn't support this, either, it does
@@ -439,7 +438,7 @@ colorlinks,
 % usually also changes the corresponding boxes.
 %^^A
 % \subsection{\texorpdfstring{\textsf{beamer}}{Beamer} compatibility}
-% \textsf{orgstyle} is compatible with many beamerthemes, but not all.
+% \textsf{brandstyler} is compatible with many beamerthemes, but not all.
 % To work, it is essential the theme is built on the |structure| colour.
 % This is true of most themes featuring the classical ``beamer blue''
 % colour scheme. Examples of such beamerthemes are \textsf{Frankfurt},
@@ -448,15 +447,15 @@ colorlinks,
 % incompatibility.
 %^^A
 % \subsection{Contributing}
-% Contributions of custom organisation styles are highly encouraged.
+% Contributions of custom brand styles are highly encouraged.
 % Please create a pull request on our GitHub repository at
-% \url{https://github.com/JesseStraat/orgstyle}. Make sure to follow
+% \url{https://github.com/JesseStraat/brandstyler}. Make sure to follow
 % the following guidelines:
 % \begin{enumerate}
-%   \item Organisation style files should follow the same structure
+%   \item Brand style files should follow the same structure
 %   as the ones supplied in this package.
 %   \item The file should be implemented and documented in
-%   |orgstyle.dtx|. Don't forget to update the list of files
+%   |brandstyler.dtx|. Don't forget to update the list of files
 %   in \autoref{sec:filelist}.
 %   \item Come up with a sensible, unique identifier. For example,
 %   Utrecht University was named |uu-nl| instead of |uu| to discern
@@ -473,7 +472,7 @@ colorlinks,
 %   source should be a public ``lander'' which forwards to the guide,
 %   so one can check it's a genuine style guide.
 % \end{enumerate}
-% If you don't have the technical knowledge to make an organisation
+% If you don't have the technical knowledge to make a brand
 % style, feel free to open an issue on GitHub requesting one. Please include
 % a link to an official style guide.
 %
@@ -491,97 +490,97 @@ colorlinks,
 %^^A
 % \setcounter{CodelineNo}{0}
 %    \begin{macrocode}
-%<*orgstyle>
-\ProvidesPackage{orgstyle}[2026/06/23 v1.0 Organisation style implementation]
+%<*brandstyler>
+\ProvidesPackage{brandstyler}[2026/06/23 v1.0 Brand style implementer]
 \RequirePackage{iftex}
 \RequirePackage{xcolor}
 %    \end{macrocode}
-% \begin{macro}{\orgstyle}
-% Loads organisation styles.
+% \begin{macro}{\brandstyle}
+% Loads brand styles.
 %    \begin{macrocode}
-\newcommand{\orgstyle}[1]{%
-    \IfFileExists{orgstyle-#1.sty}{%
+\newcommand{\brandstyle}[1]{%
+    \IfFileExists{brandstyler-#1.sty}{%
 %    \end{macrocode}
-% The organisation style file exists;
+% The brand style file exists;
 % we will import its parameters.
 %    \begin{macrocode}
-        \usepackage{orgstyle-#1}%
+        \usepackage{brandstyler-#1}%
 %    \end{macrocode}
 % We implement the parameters in several
 % commands.
 %    \begin{macrocode} 
-        \orgstyle@font
+        \brandstyler@font
     }{%
         % File not found
-        \PackageError{orgstyle}%
-        {The organisation style '#1'
+        \PackageError{brandstyler}%
+        {The brand style '#1'
         was not found.}%
         {Check for typos or create your
-        own organisation style.}%
+        own brand style.}%
     }
 }
 %    \end{macrocode}
 % \end{macro}
-% \begin{macro}{\orgstyle@font}
+% \begin{macro}{\brandstyler@font}
 % The included fonts are imported. We automatically check whether
 % the engine used is \hologo{pdfLaTeX}. If this is the case, we
 % use a corresponding font. If not, we assume the compiler is
 % \textsf{fontspec}-compatible.
 %    \begin{macrocode}
-\newcommand{\orgstyle@font}{%
+\newcommand{\brandstyler@font}{%
     \ifpdftex
-        \orgstyle@load@pdffont
+        \brandstyler@load@pdffont
     \else
         % Assume fontspec: use typefont
         \RequirePackage{fontspec}
-        \orgstyle@load@tffont
+        \brandstyler@load@tffont
     \fi
 }
 %    \end{macrocode}
 % \end{macro}
-% \begin{macro}{\orgstyle@load@pdffont}
+% \begin{macro}{\brandstyler@load@pdffont}
 % We import a \hologo{pdfLaTeX}-compatible font. Since the possible
 % input of such fonts is highly variable, we just assume the input
 % is a piece of code which loads the fonts.
 %    \begin{macrocode}
-\newcommand{\orgstyle@load@pdffont}{%
-    \ifcsname orgstyle@pdffont\endcsname
-        \orgstyle@pdffont
+\newcommand{\brandstyler@load@pdffont}{%
+    \ifcsname brandstyler@pdffont\endcsname
+        \brandstyler@pdffont
     \fi
 }
 %    \end{macrocode}
 % \end{macro}
-% \begin{macro}{\orgstyle@load@tffont}
+% \begin{macro}{\brandstyler@load@tffont}
 % The engine is compatible with \textsf{fontspec}, likely either
 % \hologo{LuaLaTeX} or \hologo{XeLaTeX}. The fonts are just
 % typefont files (either |.otf| or |.ttf|), and can thus be loaded
 % straightforwardly.
 %    \begin{macrocode}
-\newcommand{\orgstyle@load@tffont}{%
-    \ifcsname orgstyle@tfmainfont\endcsname
-        \orgstyle@existsload@tffont{\orgstyle@tfmainfont}{main}
+\newcommand{\brandstyler@load@tffont}{%
+    \ifcsname brandstyler@tfmainfont\endcsname
+        \brandstyler@existsload@tffont{\brandstyler@tfmainfont}{main}
     \fi
-    \ifcsname orgstyle@tfsansfont\endcsname
-        \orgstyle@existsload@tffont{\orgstyle@tfsansfont}{sans}
+    \ifcsname brandstyler@tfsansfont\endcsname
+        \brandstyler@existsload@tffont{\brandstyler@tfsansfont}{sans}
     \fi
-    \ifcsname orgstyle@tfmonofont\endcsname
-        \orgstyle@existsload@tffont{\orgstyle@tfmonofont}{mono}
+    \ifcsname brandstyler@tfmonofont\endcsname
+        \brandstyler@existsload@tffont{\brandstyler@tfmonofont}{mono}
     \fi
 }
 %    \end{macrocode}
 % \end{macro}
-% \begin{macro}{\orgstyle@existsload@tffont}
+% \begin{macro}{\brandstyler@existsload@tffont}
 % This macro checks whether a typefont exists or not. If It
 % does, the font is loaded. The first argument should be the name
 % of the font, e.g., |Helvetica|. The second argument should be
 % the type of font, i.e., |main| for \textrm{serif/Roman}, |sans| for \textsf{sans serif},
 % or |mono| for \texttt{typewriter fonts}.
 %    \begin{macrocode}
-\newcommand{\orgstyle@existsload@tffont}[2]{%
+\newcommand{\brandstyler@existsload@tffont}[2]{%
     \IfFontExistsTF{#1}
         {\csname set#2font\endcsname{#1}}
         {
-            \PackageWarning{orgstyle}{Font #1 not found. 
+            \PackageWarning{brandstyler}{Font #1 not found. 
             Your organisation recommends its usage. 
             Please install it from the internet, you organisation
             or your LaTeX distribution.}
@@ -590,10 +589,10 @@ colorlinks,
 %    \end{macrocode}
 % \end{macro}
 %    \begin{macrocode}
-%</orgstyle>
+%</brandstyler>
 %    \end{macrocode}
 % From this point onwards, we will consider the implementation
-% of the orgsty files of various organisations.
+% of the brand style files of various organisations.
 % Wherever possible, we only use freely available
 % fonts, in order to accomodate users (usually students)
 % who don't have access to those fonts.
@@ -616,8 +615,8 @@ colorlinks,
 \definecolor{RUgreen}{RGB}{074,169,067}
 \definecolor{RUyellow}{RGB}{204,175,000}
 
-\def\orgstyle@pdffont{\usepackage[defaultsans]{opensans}}
-\def\orgstyle@tfsansfont{Open Sans}
+\def\brandstyler@pdffont{\usepackage[defaultsans]{opensans}}
+\def\brandstyler@tfsansfont{Open Sans}
 \renewcommand{\familydefault}{\sfdefault}
 \@ifclassloaded{beamer}{%
     \mode<presentation>
@@ -637,9 +636,9 @@ colorlinks,
 \definecolor{UUyellow}{RGB}{255,205,000}
 \definecolor{UUred}{RGB}{192,010,053}
 
-\def\orgstyle@pdffont{\usepackage{merriweather}\usepackage[defaultsans]{opensans}}
-\def\orgstyle@tfmainfont{Merriweather}
-\def\orgstyle@tfsansfont{Open Sans}
+\def\brandstyler@pdffont{\usepackage{merriweather}\usepackage[defaultsans]{opensans}}
+\def\brandstyler@tfmainfont{Merriweather}
+\def\brandstyler@tfsansfont{Open Sans}
 \@ifclassloaded{beamer}{%
     \mode<presentation>
     \setbeamercolor{structure}{fg=UUyellow}
@@ -670,8 +669,8 @@ colorlinks,
 \definecolor{VUpurple_secondary}{RGB}{142,077,164}
 \definecolor{VUpurple_tertiary}{RGB}{221,198,238}
 
-\def\orgstyle@pdffont{\usepackage{roboto}}
-\def\orgstyle@tfsansfont{Roboto}
+\def\brandstyler@pdffont{\usepackage{roboto}}
+\def\brandstyler@tfsansfont{Roboto}
 \renewcommand{\familydefault}{\sfdefault}
 \@ifclassloaded{beamer}{%
     \mode<presentation>
